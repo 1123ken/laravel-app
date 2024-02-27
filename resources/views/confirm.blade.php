@@ -13,6 +13,7 @@
 
     内容はお間違いないですか？
     <form method="post" action="{{ route('complete') }}">
+        @csrf
         <input type="submit" name="登録">
     </form>
 </body>
