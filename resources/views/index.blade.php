@@ -13,7 +13,13 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body>
+<body> 
+    やること<br>
+    管理側のDBに登録されている情報の確認<br>
+    詳細表示・削除機能<br>
+    メール送信(できればやる)<br>
+    ログイン処理<br>
+    
     <h1>お問い合わせフォーム</h1>
     <!-- お問い合わせ内容入力フォーム -->
     <form method="post" action="{{ route('confirm') }}">
