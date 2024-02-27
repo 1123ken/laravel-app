@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <h1>お問い合わせフォーム</h1>
     <!-- お問い合わせ内容入力フォーム -->
     <form method="post" action="{{ route('confirm') }}">
@@ -22,18 +21,18 @@
         <div>
             {{-- メールアドレス email --}}
             <label for="text">メールアドレス</label>
-            <input type="mail" id="email" required>
+            <input type="email" name="email" id="email" required>
         </div>
         <div>
             {{-- 問い合わせ　本文 body --}}
             <label for="body">問い合わせ内容</label>
-            <textarea name="text" id="body" required></textarea>
+            <textarea name="body" id="body" required></textarea>
         </div>
         {{-- 登録ボタン --}}
         <div>
-            <input type="submit" name="確認 ">
+            <input type="submit" value="確認">
         </div>
     </form>
 </body>
 
-</html>
+</html> 
