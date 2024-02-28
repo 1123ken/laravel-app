@@ -1,4 +1,3 @@
-2
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -14,7 +13,10 @@
             <h1>登録完了しました</h1>
             <input type="submit" value="ログイン画面へ">
         </form>
+        <form action="{{ route('index') }}">
+            <input type="submit" value="TOPへ">
+        </form>
     </div>
 </body>
-
+    
 </html>

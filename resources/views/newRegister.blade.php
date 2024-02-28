@@ -1,4 +1,3 @@
-2
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -10,19 +9,20 @@
 
 <body>
     <div>
-        <form action="{{ route('registerComp') }}">
+        <form action="{{ route('newRegisterConfirm') }}">
+            @csrf
             <h1>新規登録画面</h1>
             <p>
-                <label for="registerID">ユーザーID</label>
-                <input type="text" name="registerID">
+                <label for="registerID">ユーザーID(メールアドレス)</label><br>
+                <input type="email" name="registerID" placeholder="xxxx@xxx.com">
             </p>
             <p>
-                <label for="registerPass">パスワード</label>
+                <label for="registerPass">パスワード</label><br>
                 <input type="password" name="registerPass">
             </p>
             <input type="submit" value="登録">
+            <button onclick="location.href='/login'">戻る</button>
         </form>
     </div>
 </body>
-
 </html>

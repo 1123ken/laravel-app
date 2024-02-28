@@ -25,7 +25,7 @@
                     <td>{{ $contact ->email }}</td>
                     <td>{{ $contact ->body }}</td>
                     <td>
-                        <button onclick="location.href=' '">詳細</button>
+                        <a href="{{ route('contactBody', ['id'=>$id->id]) }}">詳細</a></td>
                         <button onclick="location.href=' '">削除</button>
                 </td>
                 </tr>

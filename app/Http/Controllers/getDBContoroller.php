@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class getDBContoroller extends Controller
-{
+class getDBContoroller extends Controller{
+
+    protected $contact;
+
     public function __construct(){
         $this->contact = new Contact();
     }
