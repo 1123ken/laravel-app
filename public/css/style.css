@@ -29,3 +29,19 @@ textarea {
 p{
     text-align: center;
 }
+
+table{
+    border:solid 1px black;
+    margin: 0 auto;
+}
+th{
+    border: solid 1px black;
+}
+td{
+    border: solid 1px black;
+}
+
+#btn_back{
+    display: block;
+    margin: auto;
+}

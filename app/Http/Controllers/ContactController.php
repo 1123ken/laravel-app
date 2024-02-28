@@ -17,10 +17,10 @@ class ContactController extends Controller
     //入力内容確認ページに画面遷移
     public function confirm(Request $request){
         //セッション情報をinputsに保存(name基準で読み込む)
-        $inputs = $request->all();
-        dump($inputs);
+        $contact = $request->all();
+        dump($contact);
         //confirmにセッション情報を渡す
-        return view('confirm', ['inputs'=> $inputs]);
+        return view('confirm', ['contacts'=> $contact]);
     }
 
     //問い合わせフォーム登録後、完了ページに画面遷移

@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class getDBContoroller extends Controller
 {
-    //DBのテーブルからデータを取得する
-
+    public function __construct(){
+        $this->contact = new Contact();
+    }
     public function admin(){
-
-        $object = new User();
-
-        $data = $object->getData();
-
-        //viewの呼び出し
-        return view('admin');
+        $contacts = $this->contact->findAllContacts();
+        return view('admin', compact('contacts'));
     }
 }

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ログインフォーム</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <h1>管理者ログインページ</h1>
@@ -26,9 +27,11 @@
             </div>
         </form>
     </div>
-    <button onclick='location.href="/newRegister"'>新規登録</button>
-    ログイン機能は未実装なのでそのままログインできる
-    <button onclick='location.href="/admin"'>ログイン</button>
+    <div>
+        <button onclick='location.href="/newRegister"'>新規登録</button>
+        <button onclick='location.href="/admin"'>ログイン</button>
+        <button onclick='location.href="/index"'>戻る</button>
+    </div>  
 </body>
 
 </html>

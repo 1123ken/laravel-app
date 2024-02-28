@@ -14,4 +14,8 @@ class Contact extends Model
         'email',
         'body',
     ];
+
+    public function findAllContacts(){
+        return Contact::All();
+    }
 }

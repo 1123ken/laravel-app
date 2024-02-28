@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\getDBContoroller;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,6 +42,7 @@ Route::post('/registerComp', [ContactController::class, 'registerComp'])->name('
 
 //管理者画面へのルート
 Route::post('/admin', [ContactController::class, 'admin'])->name('admin');
+Route::get('/admin', [getDBContoroller::class, 'admin'])->name('admin');
 
 
 //問い合わせ内容の一覧を表示
