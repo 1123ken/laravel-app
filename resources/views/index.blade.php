@@ -39,6 +39,8 @@
             <input type="submit" value="確認">
         </div>
     </form>
+
+    <a href="/admin">管理者画面</a>
 </body>
 
 </html> 

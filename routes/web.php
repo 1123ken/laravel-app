@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +26,6 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 
 Route::post('/complete', [ContactController::class, 'complete'])->name('complete');
 
-
+//問い合わせ内容の一覧を表示
+//Route::get('/uri', 'コントローラー名@アクション名');
+Route::get('/admin', 'App\Http\Controllers\getDBContoroller@admin');
