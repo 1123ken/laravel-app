@@ -9,19 +9,16 @@
 </head>
 
 <body>
-    <h1>入力確認</h1>
-    <p>
-        内容はお間違いないですか？
-    </p>
+    <h1>入力内容確認</h1>
     <form method="post" action="{{ route('complete') }}">
         @csrf
-        <label>メールアドレス</label>
-        {{ $inputs['email'] }}
-        <input name="email" value="{{ $inputs['email'] }}" type="hidden">
+        <label>メールアドレス</label><br>
+        {{ $inputs['email'] }}br
+        <input name="email" value="{{ $inputs['email'] }}" type="hidden"><br>
 
-        <label>問い合わせ内容</label>
-        {{ $inputs['body'] }}
-        <input name="body" value="{{ $inputs['body'] }}" type="hidden">
+        <label>問い合わせ内容</label><br>
+        {{ $inputs['body'] }}br
+        <input name="body" value="{{ $inputs['body'] }}" type="hidden"><br>
         <input type="submit" value="登録">
     </form>
 </body>

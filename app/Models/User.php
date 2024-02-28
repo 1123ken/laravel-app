@@ -47,11 +47,11 @@ use Illuminate\Support\Facades\DB;
 //     ];
 // }
 
+//DBからデータ取得
 class User extends Model{
     protected $fillable = [
         "email",
         "body",
-
     ];
 
     //テーブル名の指定  
