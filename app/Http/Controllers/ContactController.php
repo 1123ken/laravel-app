@@ -74,6 +74,7 @@ class ContactController extends Controller
         //登録完了画面にリダイレクトする
         return redirect()->route(route: 'registerComp');
     }
+    
     public function registerComp()
     {
         //登録完了画面に遷移

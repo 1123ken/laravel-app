@@ -19,9 +19,16 @@ class getDBContoroller extends Controller{
         return view('admin', compact('contacts'));
     }
 
-    public function contactBody(){
-        $data = $this->contact->find('email');
+    public function contactBody($id){
+        //contactの全データ検索してdataに渡す
+        //やりたいのは選んだところのidの情報だけ引っ張りたい
+        $data = $this->contact->find($id);
         dump($data);
-        return view('contactBody');
+        return view('contactBody', compact('data'));
+    }
+
+    public function deleteContacct($id){
+        //idから削除
+        Contact::find($id)->delete();
     }
 }

@@ -28,11 +28,11 @@
                     <td>{{ $contact ->id }}</td>
                     <td>{{ $contact ->email }}様</td>
                     <td>
-                        <form method="post" action="{{ route('contactBody') }}">
-                            @csrf
-                            <input type="submit" value="詳細">  
-                        </form>
-                            <input type="submit" value="削除">  
+                        <a href="{{ route('contactBody', ['id'=>$contact->id]) }}" >
+                            <button type="button">詳細</button>
+                        </a>
+                        <a href="">
+                            <button type="button">削除</button>
                         </a>
                 </td>
                 </tr>

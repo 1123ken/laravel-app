@@ -13,8 +13,7 @@
         <table>
             <tr>メールアドレス</tr>
             <tr>
-                {{-- <input type="hidden" value="{{ $data->email }}"> --}}
-                {{-- {{ $data->email }} --}}
+                {{ $data ->email }}    
             </tr>
         </table>
     </div>
@@ -22,8 +21,7 @@
         <table>
             <tr>問い合わせ内容</tr>
             <tr>
-                {{-- <input type="hidden" value="{{ $data->body }}"> --}}
-                {{-- {!! nl2br(e($data->body)) !!} --}}
+                {!! nl2br(e($data->body)) !!}
             </tr>
         </table>
     </div>

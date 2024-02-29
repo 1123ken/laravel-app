@@ -50,4 +50,5 @@ Route::post('logout',[ContactController::class,'logout'])->name('logout');
 Route::get('/admin', 'App\Http\Controllers\getDBContoroller@admin');
 
 //詳細画面へのルート
-Route::post('/contactBody', [getDBContoroller::class, 'contactBody'])->name('contactBody');
+//('URL表示部分', [コントローラ名::class,'関数名'])->name('??????')
+Route::get('contactBody/{id}', [getDBContoroller::class, 'contactBody'])->name('contactBody');
