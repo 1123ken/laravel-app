@@ -12,8 +12,16 @@ class getDBContoroller extends Controller{
     public function __construct(){
         $this->contact = new Contact();
     }
+    
     public function admin(){
         $contacts = $this->contact->findAllContacts();
+        dump($contacts);
         return view('admin', compact('contacts'));
+    }
+
+    public function contactBody(){
+        $data = $this->contact->find('email');
+        dump($data);
+        return view('contactBody');
     }
 }

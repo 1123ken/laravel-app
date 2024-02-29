@@ -9,24 +9,31 @@
 </head>
 <body>
     <h1>管理者画面</h1>
+    {{-- {{\Illuminate\Support\Facades\Auth::user()->name}}でログインしています。 --}}
+    {{-- <form action="{{route(' logout')}}" method="post">
+        @csrf
+        <button>ログアウト</button>
+    </form> --}}
         <table>
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>メールアドレス</th>
-                    <th>本文</th>
+                    <th>問い合わせ番号</th>
+                    <th>問い合わせユーザー名（アドレス）</th>
                     <th>操作</th>
-                </tr>
+                </tr>   
             </thead>
             <tbody>
                 @foreach($contacts as $contact)
                 <tr>
                     <td>{{ $contact ->id }}</td>
-                    <td>{{ $contact ->email }}</td>
-                    <td>{{ $contact ->body }}</td>
+                    <td>{{ $contact ->email }}様</td>
                     <td>
-                        <a href="{{ route('contactBody', ['id'=>$id->id]) }}">詳細</a></td>
-                        <button onclick="location.href=' '">削除</button>
+                        <form method="post" action="{{ route('contactBody') }}">
+                            @csrf
+                            <input type="submit" value="詳細">  
+                        </form>
+                            <input type="submit" value="削除">  
+                        </a>
                 </td>
                 </tr>
                 @endforeach

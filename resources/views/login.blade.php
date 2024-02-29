@@ -28,7 +28,7 @@
     </div>
     <div>
         <button onclick='location.href="/newRegister"'>新規登録</button>
-        <button onclick='location.href="/admin"'>ログイン</button>
+        <button onclick='location.href="/admin"'>ログイン処理なしで進む</button>
         <button onclick='location.href="/index"'>戻る</button>
     </div>
 </body>

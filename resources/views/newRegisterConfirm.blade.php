@@ -12,12 +12,12 @@
     <form method="post" action="{{ route('registerComp') }}">
         @csrf
         <label>メールアドレス</label><br>
-        {{ $register['email'] }}<br>
-        <input name="email" value="{{ $register['email'] }}" type="hidden"><br>
+        {{ $registers['email'] }}<br>
+        <input name="email" value="{{ $registers['email'] }}" type="hidden"><br>
 
         <label>問い合わせ内容</label><br>
-        {{ $register['password'] }}<br>
-        <input name="password" value="{{ $register['password'] }}" type="hidden"><br>
+        {{ $registers['password'] }}<br>
+        <input name="password" value="{{ $registers['password'] }}" type="hidden"><br>
         <input type="submit" value="登録">
     </form>
 </body>
