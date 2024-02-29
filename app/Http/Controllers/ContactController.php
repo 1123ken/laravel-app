@@ -24,7 +24,6 @@ class ContactController extends Controller
     {
         //セッション情報をcontactsに保存(name基準で読み込む)
         $contacts = $request->all();
-        dump($contacts);
         //confirmにセッション情報を渡す
         return view('confirm', ['contacts' => $contacts]);
     }
@@ -56,7 +55,6 @@ class ContactController extends Controller
     {
         //セッション情報をregisterに保存
         $registers = $request->all();
-        dump($registers);
         return view('newRegisterConfirm', ['newRegisterConfirm' => $registers]);
     }
 

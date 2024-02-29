@@ -31,9 +31,10 @@
                         <a href="{{ route('contactBody', ['id'=>$contact->id]) }}" >
                             <button type="button">詳細</button>
                         </a>
-                        <a href="">
-                            <button type="button">削除</button>
-                        </a>
+                        <form action="{{ route('destroy',['id'=>$contact->id]) }}" method="post">
+                            @csrf
+                            <button type="submit">削除</button>
+                        </form>
                 </td>
                 </tr>
                 @endforeach

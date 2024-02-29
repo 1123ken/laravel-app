@@ -15,7 +15,6 @@ class getDBContoroller extends Controller{
     
     public function admin(){
         $contacts = $this->contact->findAllContacts();
-        dump($contacts);
         return view('admin', compact('contacts'));
     }
 
@@ -23,12 +22,12 @@ class getDBContoroller extends Controller{
         //contactの全データ検索してdataに渡す
         //やりたいのは選んだところのidの情報だけ引っ張りたい
         $data = $this->contact->find($id);
-        dump($data);
         return view('contactBody', compact('data'));
     }
 
-    public function deleteContacct($id){
-        //idから削除
-        Contact::find($id)->delete();
+    public function destroy($id){
+        $deleteData = $this->contact->deleteDataById($id);
+        //削除したら一覧画面にリダイレクト
+        return redirect()->route('admin');  
     }
 }

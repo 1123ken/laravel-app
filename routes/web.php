@@ -15,6 +15,7 @@ Route::get('/', function () {
 
 //indexページへのルート
 Route::get('/index', [ContactController::class, 'index'])->name('index');
+Route::post('/index', [ContactController::class, 'index'])->name('index');
 
 //問い合わせ確認画面へのルート
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
@@ -29,7 +30,7 @@ Route::get('/login', [ContactController::class, 'login'])->name('login');
 Route::get('/newRegister', [ContactController::class, 'newRegister'])->name('newRegister');
 
 //登録確認画面へのルート
-Route::post('/newRegisterConfirm', [ContactController::class, 'newRegisterConfirm'])->name('newRegisterConfirm');
+Route::get('/newRegisterConfirm', [ContactController::class, 'newRegisterConfirm'])->name('newRegisterConfirm');
 
 //登録完了画面へのルート                **要確認**
 Route::post('/registerComp', [ContactController::class, 'registerComp'])->name('registerComp');
@@ -49,6 +50,8 @@ Route::post('logout',[ContactController::class,'logout'])->name('logout');
 //問い合わせ内容の一覧を表示
 Route::get('/admin', 'App\Http\Controllers\getDBContoroller@admin');
 
-//詳細画面へのルート
-//('URL表示部分', [コントローラ名::class,'関数名'])->name('??????')
+//詳細画面へのルート　idを渡してidから他のテーブル情報を表示する
 Route::get('contactBody/{id}', [getDBContoroller::class, 'contactBody'])->name('contactBody');
+
+//一覧から問い合わせ削除処理
+Route::post('/destroy{id}', [getDBContoroller::class, 'destroy'])->name('destroy');

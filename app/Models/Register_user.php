@@ -14,7 +14,7 @@ class Register_user extends Model
         'email',
         'password',
     ];
-
+    
     public function findAllRegister_user(){
         return Register_user::All();
     }

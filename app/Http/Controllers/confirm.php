@@ -12,4 +12,8 @@ class confirm extends Controller
         //OKなら完了画面へ
         return view('confirm');
     }
+
+    public function newRegisterConfirm(){
+        return view('newRegisterConirm');
+    }
 }

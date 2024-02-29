@@ -5,28 +5,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>問い合わせ詳細</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
     <h1>問い合わせ内容詳細</h1>
     <div>
         <table>
-            <tr>メールアドレス</tr>
+            <thead>
+                <tr>
+                    <th>
+                        メールアドレス
+                    </th>
+                </tr>
+            </thead>
             <tr>
-                {{ $data ->email }}    
+                <td>
+                    {{ $data->email }}
+                </td>
             </tr>
         </table>
     </div>
     <div>
         <table>
-            <tr>問い合わせ内容</tr>
+            <thead>
+                <tr>
+                    <th>
+                        問い合わせ内容
+                    </th>
+                </tr>
+            </thead>
             <tr>
-                {!! nl2br(e($data->body)) !!}
+                <td>
+                    {!! nl2br(e($data->body)) !!}
+                </td>
             </tr>
         </table>
     </div>
-    <button onclick="location.href='/admin'">戻る</button>
-    <button onclick="location.href='/index'">TOPへ</button>
+    <div>
+        <button onclick="location.href='/admin'">戻る</button>
+        <button onclick="location.href='/index'">TOPへ</button>
+    </div>
 </body>
 
 </html>

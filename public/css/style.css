@@ -45,3 +45,7 @@ td{
     display: block;
     margin: auto;
 }
+
+#admin_btn{
+    text-align: right;
+}

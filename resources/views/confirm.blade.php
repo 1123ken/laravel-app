@@ -10,17 +10,20 @@
 
 <body>
     <h1>入力内容確認</h1>
-    <form method="post" action="{{ route('complete') }}">
-        @csrf
-        <label>メールアドレス</label><br>
-        {{ $contacts['email'] }}<br>
-        <input name="email" value="{{ $contacts['email'] }}" type="hidden"><br>
 
-        <label>問い合わせ内容</label><br>
-        {{ $contacts['body'] }}<br>
-        <input name="body" value="{{ $contacts['body'] }}" type="hidden"><br>
-        <input type="submit" value="登録">
-    </form>
+    <div>
+        <form method="post" action="{{ route('complete') }}">
+            @csrf
+            <label>メールアドレス</label><br>
+            {{ $contacts['email'] }}<br>
+            <input name="email" value="{{ $contacts['email'] }}" type="hidden"><br>
+            
+            <label>問い合わせ内容</label><br>
+            {{ $contacts['body'] }}<br>
+            <input name="body" value="{{ $contacts['body'] }}" type="hidden"><br>
+            <input type="submit" value="登録">
+        </form>
+    </div>
 </body>
 
 </html>

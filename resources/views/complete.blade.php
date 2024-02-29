@@ -10,9 +10,11 @@
 
 <body>
     <h1>送信しました</h1>
-    <form method="post" action="{{ route('index') }}">
-    @csrf
-        <input type="submit" value="戻る">
-    </form>
+    <div>
+        <form method="post" action="{{ route('index') }}">
+            @csrf
+            <input type="submit" value="戻る">
+        </form>
+    </div>
 </body>
 </html>

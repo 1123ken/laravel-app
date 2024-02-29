@@ -14,5 +14,14 @@ class Contact extends Model{
     ];
     public function findAllContacts(){
         return Contact::All();
-    }   
+    } 
+
+    /**
+     * 削除処理
+     */
+    public function deleteDataById($id)
+    {
+        return $this->destroy($id);
+    }
+    
 }

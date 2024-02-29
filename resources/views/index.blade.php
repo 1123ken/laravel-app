@@ -9,11 +9,12 @@
 </head>
 
 <body> 
-    やること<br>
-    詳細表示・削除機能→まだ<br>
-    メール送信(できればやる)<br>
-    ログイン処理→まだ<br>
-    
+    <div id="admin_btn">
+        {{-- 管理者ログインページに画面遷移 --}}
+        <a href="{{ route('login') }}">
+            <button type="button">管理者画面</button>
+        </a>
+        </div>
     <h1>お問い合わせフォーム</h1>
     <!-- お問い合わせ内容入力フォーム -->
     <form method="post" action="{{ route('confirm') }}">
@@ -34,7 +35,5 @@
         </div>
 
     </form>
-    {{-- 管理者ログインページに画面遷移 --}}
-    <a href="{{ route('login') }}">管理者画面</a>
 </body>
 </html> 
