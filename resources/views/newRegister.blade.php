@@ -5,24 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>新規ユーザー登録</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
     <div>
-        <form action="{{ route('newRegisterConfirm') }}">
-            @csrf
-            <h1>新規登録画面</h1>
-            <p>
-                <label for="registerID">ユーザーID(メールアドレス)</label><br>
-                <input type="email" name="registerID" placeholder="xxxx@xxx.com">
-            </p>
-            <p>
-                <label for="registerPass">パスワード</label><br>
-                <input type="password" name="registerPass">
-            </p>
-            <input type="submit" value="登録">
-            <button onclick="location.href='/login'">戻る</button>
-        </form>
+        <h1>新規登録画面</h1>
+        <div>
+            <form action="/register" method="post">
+                @csrf
+                <div>
+                    <label for="registerID">ユーザーID(メールアドレス)</label><br>
+                    <input type="email" name="registerID" value="{{ old('email') }}" placeholder="xxxx@xxx.com">
+                </div>
+                <div>
+                    <label for="password">パスワード</label><br>
+                    <input type="password" name="password" value="{{ old('password') }}">
+                </div>
+                <div>
+                    <label for="password_confirmation">パスワード確認</label><br>
+                    <input type="password_confirmation" name="password_confirmation"
+                    value="{{ old('password_confirmation') }}">
+                </div>
+                <div>
+                    <input type="submit" value="登録">
+                </div>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>

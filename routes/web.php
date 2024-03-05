@@ -55,3 +55,9 @@ Route::get('contactBody/{id}', [getDBContoroller::class, 'contactBody'])->name('
 
 //一覧から問い合わせ削除処理
 Route::post('/destroy{id}', [getDBContoroller::class, 'destroy'])->name('destroy');
+
+
+//認証関連
+
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']); 
