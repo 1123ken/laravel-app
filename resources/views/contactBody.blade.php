@@ -32,5 +32,6 @@
             </tr>
         </table>
     </div>
+    <button onclick="location.href='">返信</button>
     <button onclick="location.href='/admin'">戻る</button>
 </x-app-layout>
