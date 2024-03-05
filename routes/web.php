@@ -53,5 +53,4 @@ Route::get('contactBody/{id}', [getDBContoroller::class, 'contactBody'])->name('
 Route::post('/destroy{id}', [getDBContoroller::class, 'destroy'])->name('destroy');
 
 
-
 require __DIR__.'/auth.php';
