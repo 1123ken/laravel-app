@@ -11,7 +11,7 @@
 <body>
     <h1>送信しました</h1>
     <div>
-        <form method="post" action="{{ route('index') }}">
+        <form method="post" action="{{ route('contactIndex') }}">
             @csrf
             <input type="submit" value="戻る">
         </form>

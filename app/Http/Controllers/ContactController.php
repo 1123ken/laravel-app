@@ -14,28 +14,28 @@ use function PHPSTORM_META\map;
 class ContactController extends Controller
 {
     //問い合わせフォームに画面遷移
-    public function index()
+    public function contactIndex()
     {
-        return view('index');
+        return view('contactIndex');
     }
 
     //入力内容確認ページに画面遷移
-    public function confirm(Request $request)
+    public function contactConfirm(Request $request)
     {
         //セッション情報をcontactsに保存(name基準で読み込む)
         $contacts = $request->all();
         //confirmにセッション情報を渡す
-        return view('confirm', ['contacts' => $contacts]);
+        return view('contactConfirm', ['contacts' => $contacts]);
     }
 
     //問い合わせフォーム登録後、完了ページに画面遷移
-    public function complete(Request $request)
+    public function contactComplete(Request $request)
     {
         //Contactテーブルに問い合わせ内容を登録
         Contact::create([
             "email" => $request->email,
             "body"  => $request->body,
         ]);
-        return view('complete');
+        return view('contactComplete');
     }
 }

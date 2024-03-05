@@ -8,13 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <h1>管理者画面</h1>
-    {{-- ログイン処理実装時にログインをしているかどうか表示するために実装する　まだ仮の状態 --}}
-    {{-- {{\Illuminate\Support\Facades\Auth::user()->name}}でログインしています。 --}}
-    {{-- <form action="{{route(' logout')}}" method="post">
-        @csrf
-        <button>ログアウト</button>
-    </form> --}}
+    <h1>問い合わせ内容一覧</h1>
         <table>
             <thead>
                 <tr>
@@ -41,7 +35,7 @@
                 @endforeach
             </tbody>
         </table>
-    <button onclick="location.href='/index'" id="btn_back">戻る</button>
+    <button onclick="location.href='/'" id="btn_back">TOP</button>
 </body>
 
 </html>

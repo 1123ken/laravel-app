@@ -12,7 +12,7 @@
     <h1>入力内容確認</h1>
 
     <div>
-        <form method="post" action="{{ route('complete') }}">
+        <form method="post" action="{{ route('contactComplete') }}">
             @csrf
             <label>メールアドレス</label><br>
             {{ $contacts['email'] }}<br>

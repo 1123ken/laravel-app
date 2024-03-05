@@ -31,8 +31,8 @@ Route::middleware('auth')->group(function () {
 });
 
 //indexページへのルート
-Route::get('/index', [ContactController::class, 'index'])->name('index');
-Route::post('/index', [ContactController::class, 'index'])->name('index');
+Route::get('/contactIndex', [ContactController::class, 'contactIndex'])->name('contactIndex');
+Route::post('/contactIndex', [ContactController::class, 'contactIndex'])->name('contactIndex');
 
 //問い合わせ内容の一覧を表示
 Route::get('/admin', 'App\Http\Controllers\getDBContoroller@admin');
@@ -41,10 +41,10 @@ Route::get('/admin', 'App\Http\Controllers\getDBContoroller@admin');
 Route::post('/admin', [ContactController::class, 'admin'])->name('admin');
 
 //問い合わせ確認画面へのルート
-Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
+Route::post('/contactConfirm', [ContactController::class, 'contactConfirm'])->name('contactConfirm');
 
 //問い合わせ完了画面へのルート
-Route::post('/complete', [ContactController::class, 'complete'])->name('complete');
+Route::post('/contactComplete', [ContactController::class, 'contactComplete'])->name('contactComplete');
 
 //詳細画面へのルート　idを渡してidから他のテーブル情報を表示する
 Route::get('contactBody/{id}', [getDBContoroller::class, 'contactBody'])->name('contactBody');

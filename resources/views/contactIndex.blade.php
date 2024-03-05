@@ -11,7 +11,7 @@
 <body> 
     <h1>お問い合わせフォーム</h1>
     <!-- お問い合わせ内容入力フォーム -->
-    <form method="post" action="{{ route('confirm') }}">
+    <form method="post" action="{{ route('contactConfirm') }}">
         @csrf
         <div>
             {{-- メールアドレス email --}}
