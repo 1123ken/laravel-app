@@ -9,11 +9,6 @@
 </head>
 
 <body> 
-    <div id="admin_btn">
-        {{-- 管理者ログインページに画面遷移 --}}
-        <a href="{{ route('admin') }}">
-            <button type="button">管理者画面</button>
-        </a>
     <h1>お問い合わせフォーム</h1>
     <!-- お問い合わせ内容入力フォーム -->
     <form method="post" action="{{ route('confirm') }}">
@@ -30,9 +25,11 @@
         </div>
         {{-- 登録ボタン --}}
         <div>
-            <input type="submit" value="確認">
+            <button>確認</button>
         </div>
-
+        <div>
+            <button onclick="location.href='/'">TOP</button>
+        </div>
     </form>
 </body>
 </html> 

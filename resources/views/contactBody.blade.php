@@ -44,7 +44,7 @@
     </div>
     <div>
         <button onclick="location.href='/admin'">戻る</button>
-        <button onclick="location.href='/index'">TOPへ</button>
+        <button onclick="location.href='/'">TOPへ</button>
     </div>
 </body>
 
