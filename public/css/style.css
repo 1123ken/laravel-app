@@ -1,11 +1,16 @@
 input {
     background-color: white;
     color: black;
+    border:solid 1px black;
 }
 
-/* body{
-    background-color: aqua;
-} */
+button{
+    border:solid 1px black;
+}
+
+h1{
+    font-size: 30px;
+}
 
 #email {
     width: 300px;
