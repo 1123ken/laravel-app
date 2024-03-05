@@ -20,7 +20,6 @@ class getDBContoroller extends Controller{
 
     public function contactBody($id){
         //contactの全データ検索してdataに渡す
-        //やりたいのは選んだところのidの情報だけ引っ張りたい
         $data = $this->contact->find($id);
         return view('contactBody', compact('data'));
     }

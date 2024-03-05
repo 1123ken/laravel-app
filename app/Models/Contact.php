@@ -12,13 +12,13 @@ class Contact extends Model{
         'email',
         'body',
     ];
+
+    //contactテーブルから情報を引っ張る
     public function findAllContacts(){
         return Contact::All();
     } 
 
-    /**
-     * 削除処理
-     */
+    //idからの削除処理
     public function deleteDataById($id)
     {
         return $this->destroy($id);

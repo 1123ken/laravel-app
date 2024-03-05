@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>管理者画面</h1>
+    {{-- ログイン処理実装時にログインをしているかどうか表示するために実装する　まだ仮の状態 --}}
     {{-- {{\Illuminate\Support\Facades\Auth::user()->name}}でログインしています。 --}}
     {{-- <form action="{{route(' logout')}}" method="post">
         @csrf
@@ -40,7 +41,7 @@
                 @endforeach
             </tbody>
         </table>
-    <button onclick="location.href='/login'" id="btn_back">戻る</button>
+    <button onclick="location.href='/index'" id="btn_back">戻る</button>
 </body>
 
 </html>

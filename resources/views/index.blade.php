@@ -11,10 +11,9 @@
 <body> 
     <div id="admin_btn">
         {{-- 管理者ログインページに画面遷移 --}}
-        <a href="{{ route('login') }}">
+        <a href="{{ route('admin') }}">
             <button type="button">管理者画面</button>
         </a>
-        </div>
     <h1>お問い合わせフォーム</h1>
     <!-- お問い合わせ内容入力フォーム -->
     <form method="post" action="{{ route('confirm') }}">
