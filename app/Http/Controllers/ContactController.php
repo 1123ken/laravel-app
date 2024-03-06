@@ -13,6 +13,11 @@ use function PHPSTORM_META\map;
 
 class ContactController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //問い合わせフォームに画面遷移
     public function contactIndex()
     {

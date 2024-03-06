@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Pagination\Paginator;
 use App\Models\Contact;
+use App\Models\Inquiry;
 use Illuminate\Http\Request;
 
 class getDBContoroller extends Controller{
@@ -11,8 +12,9 @@ class getDBContoroller extends Controller{
 
     public function __construct(){
         $this->contact = new Contact();
+        $this->middleware('auth');
     }
-    
+
     public function admin(){
         $contacts = $this->contact->findAllContacts();
         return view('admin', compact('contacts'));

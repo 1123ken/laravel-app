@@ -27,6 +27,9 @@
                     {{ __('未実装機能') }}
                     <ul>
                         <li>
+                            {{ __('管理者と利用者のページを分ける') }}
+                        </li>
+                        <li>
                             {{ __('メール送信機能 https://zenn.dev/nshiro/articles/adcbc2e127f712') }}
                         </li>
                         <li>
