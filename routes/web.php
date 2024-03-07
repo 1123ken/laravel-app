@@ -59,6 +59,3 @@ require __DIR__.'/auth.php';
 
 //そのページにアクセスしたらメールが送られる welcomeの末尾にsend-mailを入れると
 Route::get('send-mail', [MailController::class,'welcome']);
-
-//登録完了するとメールが送られる /contactComplete
-Route::get('contactComplete', [MailController::class,'complete']);

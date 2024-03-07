@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique(); //メールアドレス
+            $table->string('email'); //メールアドレス　同じアドレスで問い合わせできなくなると困るのでユニークは外した戻す場合は→のを使う　->unique();
             $table->text('body'); //本文
             $table->timestamps();
         });

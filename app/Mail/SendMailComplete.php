@@ -9,6 +9,8 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+
+//登録完了時に自動送信するためのクラス
 class SendMailComplete extends Mailable
 {
     use Queueable, SerializesModels;
@@ -41,7 +43,7 @@ class SendMailComplete extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.sendMailComplete', //送るメールのviewファイルの場所
+            view: 'emails.sendMailComplete', //メールの文章の場所
         );
     }
 

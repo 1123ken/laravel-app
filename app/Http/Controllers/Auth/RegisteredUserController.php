@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailComplete;
 
 class RegisteredUserController extends Controller
 {
@@ -42,10 +44,21 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+
+        //**********登録時に登録完了メールが送られる*********
+        $maildata = [
+            'title' => '登録ありがとうございます',
+            'body' => '登録完了しました。',
+        ];
+
+        Mail::to($user->email)->send(new SendMailComplete($maildata));
+
+        //************************************************
+
+
         event(new Registered($user));
 
         Auth::login($user);
-
         return redirect(RouteServiceProvider::HOME);
     }
-}
+}   

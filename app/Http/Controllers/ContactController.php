@@ -8,7 +8,8 @@ use App\Models\Contact;
 use App\Models\contact_id;
 use App\Models\Register_user;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailContact;
 use function PHPSTORM_META\map;
 
 class ContactController extends Controller
@@ -41,6 +42,18 @@ class ContactController extends Controller
             "email" => $request->email,
             "body"  => $request->body,
         ]);
+
+        /**********登録時に登録完了メールが送られる*********/
+        $maildata = [
+            'title' => 'お問い合わせありがとうございます',
+            'body' => 'お問い合わせ受付しました',
+        ];
+
+        Mail::to($request->email)->send(new SendMailContact($maildata));
+
+        //************************************************/
+
+
         return view('contactComplete');
     }
 }

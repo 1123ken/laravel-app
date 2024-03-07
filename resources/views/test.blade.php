@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <x-app-layout>
-<div>
-        <h1>お問い合わせありがとうございます。</h1>
-        <form method="post" action="{{ route('contactIndex') }}">
+    <h1>テストページです</h1>
+    多分メールが送信されてます
+    <div>
+        <form method="post" action="{{ route('welcome') }}">
             @csrf
             <input type="submit" value="戻る">
         </form>

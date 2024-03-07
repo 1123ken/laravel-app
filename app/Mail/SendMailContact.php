@@ -9,8 +9,9 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-//テストメールを送信するためのクラス　消すかテンプレにするかどうするか
-class SendMailtest extends Mailable
+
+//登録完了時に自動送信するためのクラス
+class SendMailContact extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,8 +32,8 @@ class SendMailtest extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            //件名？
-            subject: '件名はここに書く',
+            //件名
+            subject: 'お問い合わせの件',
         );
     }
     
@@ -42,7 +43,7 @@ class SendMailtest extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.sendMailtest', //送るメールのviewファイルの場所
+            view: 'emails.sendMailContact', //メールの文章の場所
         );
     }
 
