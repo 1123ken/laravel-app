@@ -8,11 +8,23 @@
 </head>
 
 <body>
-    {{-- メールタイトル --}}
-    <h1>{{ $mailData['title'] }}</h1>
     {{-- メールの本文 --}}
-    <p>{{ $mailData['body'] }}</p>
+    <h1>{{ $mailData['title'] }}</h1>
     <p>お問い合わせありがとうございます。</p>
+
+    <p>
+        問い合わせメールアドレス
+    </p>
+    <p>
+        {{ $mailData['email'] }}
+    </p>
+    <p>
+        問い合わせ内容
+    </p>
+    <p>
+        {{ $mailData['body'] }}
+    </p>
+
 </body>
 
 </html>

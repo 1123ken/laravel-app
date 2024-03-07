@@ -46,7 +46,8 @@ class ContactController extends Controller
         /**********登録時に登録完了メールが送られる*********/
         $maildata = [
             'title' => 'お問い合わせありがとうございます',
-            'body' => 'お問い合わせ受付しました',
+            "email" => $request->email,
+            "body"  => $request->body,
         ];
 
         Mail::to($request->email)->send(new SendMailContact($maildata));

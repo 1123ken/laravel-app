@@ -49,6 +49,8 @@ class RegisteredUserController extends Controller
         $maildata = [
             'title' => '登録ありがとうございます',
             'body' => '登録完了しました。',
+            'name' => $request->name,
+            'email' => $request->email,
         ];
 
         Mail::to($user->email)->send(new SendMailComplete($maildata));
