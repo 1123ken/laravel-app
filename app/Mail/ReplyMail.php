@@ -10,8 +10,8 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 
-//問い合わせを登録時に自動的に登録メールアドレスに対して自動送信するクラス
-class SendMailContact extends Mailable
+//ユーザー新規登録時に自動送信するためのクラス
+class SendMailComplete extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -33,7 +33,7 @@ class SendMailContact extends Mailable
     {
         return new Envelope(
             //件名
-            subject: 'お問い合わせの件',
+            subject: 'お問い合わせの件について',
         );
     }
     
@@ -43,7 +43,7 @@ class SendMailContact extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.sendMailContact', //メールの文章の場所
+            view: 'emails.replyMail', //メールの文章の場所
         );
     }
 

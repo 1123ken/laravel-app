@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 
-//登録完了時に自動送信するためのクラス
+//ユーザー新規登録時に自動送信するためのクラス
 class SendMailComplete extends Mailable
 {
     use Queueable, SerializesModels;
