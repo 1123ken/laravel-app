@@ -169,7 +169,12 @@
                     </div>
                 </div>
             </div>
-
+            <br>
+            <div>
+                <form action="/send-mail" method="get">
+                    <button type="submit" style="border: solid 1px black;">テストメール送信ボタン</button>
+                </form>
+            </div>
             <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
                 <div class="text-center text-sm sm:text-left">
                     &nbsp;

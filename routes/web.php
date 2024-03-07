@@ -4,9 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\getDBContoroller;
-use App\Models\User;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
+use App\Http\Controllers\MailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -56,5 +55,10 @@ Route::get('contactBody/{id}', [getDBContoroller::class, 'contactBody'])->name('
 //一覧から問い合わせ削除処理
 Route::post('/destroy{id}', [getDBContoroller::class, 'destroy'])->name('destroy');
 
-
 require __DIR__.'/auth.php';
+
+//そのページにアクセスしたらメールが送られる welcomeの末尾にsend-mailを入れると
+Route::get('send-mail', [MailController::class,'welcome']);
+
+//登録完了するとメールが送られる /contactComplete
+Route::get('contactComplete', [MailController::class,'complete']);
