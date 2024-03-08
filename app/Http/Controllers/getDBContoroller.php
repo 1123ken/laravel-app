@@ -23,6 +23,7 @@ class getDBContoroller extends Controller{
     public function contactBody($id){
         //contactの全データ検索してdataに渡す
         $data = $this->contact->find($id);
+        dump($data);
         return view('contactBody', compact('data'));
     }
 

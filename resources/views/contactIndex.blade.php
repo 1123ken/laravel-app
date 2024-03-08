@@ -11,7 +11,7 @@
 
 <body>
     <h1>お問い合わせ</h1>
-    <form method="post" action="{{ route('contactConfirm') }}">
+    <form method="post" action="{{ route('contactConfirm') }}" id="contactBtn">
         @csrf
         <div>
             <label for="text">メールアドレス</label>
@@ -28,6 +28,9 @@
         <div>
             <input type="submit" value="確認">
         </div>
+    </form>
+    <form action="/" method="get" id="backBtn">
+        <input type="submit" value="戻る">
     </form>
 </body>
 

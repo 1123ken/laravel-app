@@ -19,6 +19,13 @@ class ContactController extends Controller
     {
         $this->middleware('auth');
     }
+
+    //welcomeページへ画面遷移
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     //問い合わせフォームに画面遷移
     public function contactIndex()
     {
@@ -35,7 +42,7 @@ class ContactController extends Controller
     }
 
     //問い合わせフォーム登録後、完了ページに画面遷移
-    public function contactComplete(Request $request)
+    public function replyComplete(Request $request)
     {
         //Contactテーブルに問い合わせ内容を登録
         Contact::create([
@@ -43,18 +50,7 @@ class ContactController extends Controller
             "body"  => $request->body,
         ]);
 
-        /**********登録時に登録完了メールが送られる*********/
-        $maildata = [
-            'title' => 'お問い合わせありがとうございます',
-            "email" => $request->email,
-            "body"  => $request->body,
-        ];
-
-        Mail::to($request->email)->send(new SendMailContact($maildata));
-
-        //************************************************/
-
-
-        return view('contactComplete');
+        return view('replyComplete');
     }
+
 }

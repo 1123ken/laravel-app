@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 
 //ユーザー新規登録時に自動送信するためのクラス
-class SendMailComplete extends Mailable
+class ReplyMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -43,7 +43,7 @@ class SendMailComplete extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.replyMail', //メールの文章の場所
+            view: 'emails.replySendMail', //メールの文章の場所
         );
     }
 

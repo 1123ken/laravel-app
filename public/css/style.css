@@ -4,6 +4,10 @@ input {
     border:solid 1px black;
 }
 
+body{
+    background-color: rgba(243, 244, 246);
+}
+
 button{
     border:solid 1px black;
 }
@@ -32,6 +36,7 @@ h1 {
 textarea {
     width: 300px;
     height: 200px;
+    resize: none;
 }
 
 p{
@@ -39,6 +44,7 @@ p{
 }
 
 table{
+    background-color: white;
     border:solid 1px black;
     margin: 0 auto;
 }
@@ -56,4 +62,105 @@ td{
 
 #admin_btn{
     text-align: right;
+}
+
+#contact{
+    margin: 20px auto;
+}
+#contact td{
+    text-align: left;
+    width:200px;
+}
+
+#reply{
+    margin-top: 20px;
+}
+
+div h1{
+    font-weight: bold;
+    margin: 20px auto;
+}
+
+table #contactCulumn{
+    text-align: center;
+}
+
+tr #contactNum{
+    text-align: center;
+    align-items: center;
+    width: 120px;
+}
+
+tr #contactList{
+    height: 20px;
+    width:0px;
+    align-items: center;
+    text-align: center;
+}
+
+tr #contactBtn{
+    width: 50px;
+    text-align: center;
+}
+
+#contactBtn button{
+    margin: 5px auto;
+    background-color: white;
+    font-weight: bold;
+}
+
+#contactBtn button:hover{
+    background-color: gray;
+}
+
+tr button{
+    margin: 5px auto 5px;
+    width: 50px;
+    height: 30px;
+}
+
+tr #contactBtn{
+    height: 50px;
+}
+#reply textarea{
+    margin-top: 5px;
+    resize: none;
+}
+#reply button{
+    margin: 5px;
+    width: 50px;
+    height: 30px;
+    font-weight: bold;
+    background-color: white;
+}
+
+#reply button:hover{
+    background-color: gray;
+}
+
+#backBtn{
+    text-align: center;
+    margin: 5px;
+}
+
+#backBtn input{
+    background-color: white;
+    font-weight: bold;
+}
+
+#contactBtn input{
+    background-color: white;
+    font-weight: bold;
+}
+
+#backBtn input:hover{
+    background-color: gray;
+}
+
+#contactBtn input:hover{
+    background-color: gray;
+}
+
+div #contact th{
+    width :300px;
 }
