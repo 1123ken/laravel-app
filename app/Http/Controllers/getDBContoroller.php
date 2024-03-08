@@ -1,25 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Pagination\Paginator;
 use App\Models\Contact;
-use App\Models\Inquiry;
-use Illuminate\Http\Request;
+
 
 class getDBContoroller extends Controller{
 
     protected $contact;
 
+    //コンストラクタ
     public function __construct(){
         $this->contact = new Contact();
         $this->middleware('auth');
     }
 
+    //一覧画面の表示
     public function admin(){
         $contacts = $this->contact->findAllContacts();
         return view('admin', compact('contacts'));
     }
 
+    //詳細画面に問い合わせ内容を表示
     public function contactBody($id){
         //contactの全データ検索してdataに渡す
         $data = $this->contact->find($id);
@@ -27,6 +28,7 @@ class getDBContoroller extends Controller{
         return view('contactBody', compact('data'));
     }
 
+    //問い合わせを削除する処理
     public function destroy($id){
         $deleteData = $this->contact->deleteDataById($id);
         //削除したら一覧画面にリダイレクト
