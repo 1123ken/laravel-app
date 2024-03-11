@@ -17,31 +17,27 @@ class ContactController extends Controller
         $this->middleware('auth');
     }
 
-
-
-
-
-
     //welcomeページへ画面遷移
     public function welcome()
     {
         return view('welcome');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    //問い合わせ一覧ページに画面遷移する場合の処理
+    public function admin()
+    {
+        //画面遷移するだけだとcontactテーブルの情報を読まずにエラーになるのでDBから持ってくる
+        $contacts = Contact::all();
+        return view('admin', compact('contacts'));
+    }
     //問い合わせフォームに画面遷移
     public function contactIndex()
+    {
+        return view('contactIndex');
+    }
+
+    //問い合わせ詳細フォームに画面遷移
+    public function contactBody()
     {
         return view('contactIndex');
     }
@@ -73,6 +69,7 @@ class ContactController extends Controller
         ];
 
         //登録内容をメールで送る
+        // Mail::to($request->email)->send(new SendMailContact($maildata));
         Mail::to($request->email)->send(new SendMailContact($maildata));
 
         return view('contactComplete');
@@ -82,7 +79,7 @@ class ContactController extends Controller
 
 
 
-    
+
     //返信内容確認
     public function replyConfirm(Request $request)
     {
@@ -90,7 +87,6 @@ class ContactController extends Controller
 
 
         return view('replyConfirm', ['replydata' => $replydata]);
-
     }
 
     //返信の処理
@@ -110,9 +106,12 @@ class ContactController extends Controller
             'body'  => $request->body,
             'reply' => $request->reply,
         ];
+        $to = $request->email;
+
+        // dd($maildata, $to);
 
         //返信内容をメールで送信する
-        Mail::to($request->email)->send(new ReplyMail($maildata));
+        Mail::to($to)->send(new ReplyMail($maildata));
 
         return view('replyComplete');
     }

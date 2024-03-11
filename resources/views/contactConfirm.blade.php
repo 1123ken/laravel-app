@@ -18,7 +18,8 @@
             <label>問い合わせ内容</label><br>
             {{ $contacts['body'] }}<br>
             <input name="body" value="{{ $contacts['body'] }}" type="hidden"><br>
-            <input type="submit" value="登録">
+            <input type="submit" value="登録" id="inputBtn">
+            <input type="button" onclick="history.back()" value="修正" id="inputBtn">
         </form>
     </div>
     

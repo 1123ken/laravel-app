@@ -1,18 +1,18 @@
 input {
     background-color: white;
     color: black;
-    border:solid 1px black;
+    border: solid 1px black;
 }
 
-body{
+body {
     background-color: rgba(243, 244, 246);
 }
 
-button{
-    border:solid 1px black;
+button {
+    border: solid 1px black;
 }
 
-h1{
+h1 {
     font-size: 30px;
 }
 
@@ -39,128 +39,146 @@ textarea {
     resize: none;
 }
 
-p{
+p {
     text-align: center;
 }
 
-table{
+table {
     background-color: white;
-    border:solid 1px black;
+    border: solid 1px black;
     margin: 0 auto;
 }
-th{
-    border: solid 1px black;
-}
-td{
+
+th {
     border: solid 1px black;
 }
 
-#btn_back{
+td {
+    border: solid 1px black;
+}
+
+#btn_back {
     display: block;
     margin: auto;
 }
 
-#admin_btn{
+#admin_btn {
     text-align: right;
 }
 
-#contact{
+#contact {
     margin: 20px auto;
 }
-#contact td{
+
+#contact td {
     text-align: left;
-    width:200px;
+    width: 200px;
 }
 
-#reply{
-    margin-top: 20px;
+#reply {
+    margin-top: 50px;
 }
 
-div h1{
+div h1 {
     font-weight: bold;
     margin: 20px auto;
 }
 
-table #contactCulumn{
+table #contactCulumn {
     text-align: center;
 }
 
-tr #contactNum{
+tr #contactNum {
     text-align: center;
     align-items: center;
     width: 120px;
 }
 
-tr #contactList{
+tr #contactList {
     height: 20px;
-    width:0px;
+    width: 0px;
     align-items: center;
     text-align: center;
 }
 
-tr #contactBtn{
+tr #contactBtn {
     width: 50px;
     text-align: center;
 }
 
-#contactBtn button{
+#contactBtn button {
     margin: 5px auto;
     background-color: white;
     font-weight: bold;
 }
 
-#contactBtn button:hover{
+#contactBtn button:hover {
     background-color: gray;
 }
 
-tr button{
+tr button {
     margin: 5px auto 5px;
     width: 50px;
     height: 30px;
 }
 
-tr #contactBtn{
+tr #contactBtn {
     height: 50px;
 }
-#reply textarea{
-    margin-top: 5px;
+
+#reply textarea {
     resize: none;
 }
-#reply button{
-    margin: 5px;
+
+#backBtn input {
+    background-color: white;
+    font-weight: bold;
+}
+
+#contactBtn input {
+    background-color: white;
+    font-weight: bold;
+}
+
+#backBtn input:hover {
+    background-color: gray;
+}
+
+#contactBtn input:hover {
+    background-color: gray;
+}
+
+div #contact th {
+    width: 300px;
+}
+
+div form input {
+    font-weight: bold;
+    margin-top: 20px;
     width: 50px;
     height: 30px;
-    font-weight: bold;
-    background-color: white;
-}
-
-#reply button:hover{
-    background-color: gray;
-}
-
-#backBtn{
     text-align: center;
-    margin: 5px;
+    align-items: center;
+
 }
 
-#backBtn input{
-    background-color: white;
-    font-weight: bold;
+#replyspace {
+    margin: 50px auto 50px;
+    width: 300px;
+    max-width: 300px;
+    max-height: 600px;
 }
 
-#contactBtn input{
-    background-color: white;
-    font-weight: bold;
-}
-
-#backBtn input:hover{
+#replyspace input:hover {
     background-color: gray;
 }
 
-#contactBtn input:hover{
-    background-color: gray;
+#confirm {
+    width: 300px;
+    max-width: 300px;
+    max-height: 600px;
 }
 
-div #contact th{
-    width :300px;
+#inputBtn:hover{
+    background-color: gray;
 }

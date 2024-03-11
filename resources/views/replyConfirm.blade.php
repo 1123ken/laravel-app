@@ -10,26 +10,49 @@
 </head>
 
 <body>
-    <p>問い合わせメールアドレス</p>
+    <h1>返信内容確認</h1>
     <form method="post" action="{{ route('replyComplete') }}">
+        @csrf
+        {{-- 問い合わせ内容 --}}
         <div>
-            {{ $replydata['email'] }}
-            <input type="hidden"  name="email" value="{{ $replydata['email'] }}">
-        </div>
-        <p>問い合わせ内容</p>
-        <div>
-            {{ $replydata['body'] }}
-            <input type="hidden" name="body" value="{{ $replydata['body'] }}">
+            <table id="confirm">
+                <tr>
+                    <th>お問い合わせメールアドレス</th>
+                </tr>
+                <tr>
+                    <td>{{ $replydata['email'] }}
+                        <input type="hidden" name="email" value="{{ $replydata['email'] }}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ内容</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ $replydata['body'] }}
+                        <input type="hidden" name="body" value="{{ $replydata['body'] }}">
+                    </td>
+                </tr>
+            </table>
         </div>
 
-        <h1>返信内容</h1>
-        @csrf
+        {{-- 返信確認 --}}
         <div>
-            {{ $replydata['reply'] }}
-            <input type="hidden" name="reply" value="{{ $replydata['reply'] }}">
+            <table id="replyspace">
+                <tr>
+                    <th>返信内容</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ $replydata['reply'] }}
+                        <input type="hidden" name="reply" value="{{ $replydata['reply'] }}">
+                    </td>
+                </tr>
+            </table>
         </div>
         <div>
-            <input type="submit" value="送信">  
+            <input type="submit" value="送信" id="inputBtn">
+            <input type="button" onclick="history.back()" value="修正" id="inputBtn">
         </div>
     </form>
 </body>

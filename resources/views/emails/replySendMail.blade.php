@@ -12,14 +12,14 @@
     <p>お問合せいただいた内容は以下の通りになります。</p>
     <div>
         <p>お客様のアドレス</p>
-        <p>{{ $maildata['email'] }}</p>
+        <p>{{ $mailData['email'] }}</p>
         <p>お問い合わせ内容</p>
-        <p>{{ $maildata['body'] }}</p>
+        <p>{{ $mailData['body'] }}</p>
     </div>
 
     <p>このお問い合わせについてのご回答はこちらになります。</p>
     <div>
-        <p>{{ $maildata['reply'] }}</p>
+        <p>{{ $mailData['reply'] }}</p>
     </div>
     <div>
         <p>不明点があればこのメールをそのままご返信ください</p>

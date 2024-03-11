@@ -11,7 +11,7 @@
 
 <body>
     <h1>お問い合わせ</h1>
-    <form method="post" action="{{ route('contactConfirm') }}" id="contactBtn">
+    <form method="post" action="{{ route('contactConfirm') }}">
         @csrf
         <div>
             <label for="text">メールアドレス</label>
@@ -25,13 +25,13 @@
         <div>
             <textarea name="body" id="body" required></textarea>
         </div>
-        <div>
+        <div id="contactBtn">
             <input type="submit" value="確認">
+            <input type="button" onclick="location.href='{{ route('welcome') }}';" value="戻る" id="inputBtn">
         </div>
     </form>
-    <form action="/" method="get" id="backBtn">
-        <input type="submit" value="戻る">
-    </form>
+    <div>
+
 </body>
 
 </html>

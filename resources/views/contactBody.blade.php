@@ -17,7 +17,7 @@
                 <tr>
                     <td>
                         {{ $data->email }}
-                        <input type="hidden" name="email" value="{{ $data->email}}">
+                        <input type="hidden" name="email" value="{{ $data->email }}">
                     </td>
                 </tr>
             </table>
@@ -34,21 +34,24 @@
                     <tr>
                         <td>
                             {!! nl2br(e($data->body)) !!}
-                            <input type="hidden" name="body" value="{{ $data->body}}">
+                            <input type="hidden" name="body" value="{{ $data->body }}">
                         </td>
             </div>
             </tr>
             </table>
         </div>
         <div id="reply">
-            <h1>問い合わせに対しての返信</h1>
-        </div>
-        <div id="reply">
-            <textarea name="reply" id="replyarea" required></textarea>
-        </div>
-        <input type="submit" value="確認">
-    </form>
-    <div id="reply">
-        <button onclick="location.href='/admin'">戻る</button>
-    </div>
+            <table>
+                <tr>
+                    <th>
+                        問い合わせに対しての返信
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="reply" id="replyarea" required></textarea>
+                    </td>
+            </table>
+            <input type="submit" value="確認" id="inputBtn">
+            <input type="button" onclick="history.back()" value="戻る" id="inputBtn">
 </x-app-layout>
