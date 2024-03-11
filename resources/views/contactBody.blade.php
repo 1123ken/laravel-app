@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <textarea name="reply" id="replyarea" required></textarea>
+                        <textarea name="reply" id="replyarea" placeholder="返信内容を入力してください" required></textarea>
                     </td>
             </table>
             <input type="submit" value="確認" id="inputBtn">
