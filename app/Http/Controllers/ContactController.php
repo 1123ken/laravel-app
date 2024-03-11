@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailContact;
 use App\Mail\ReplyMail;
 
+
 class ContactController extends Controller
 {
     //コンストラクタ
@@ -27,7 +28,8 @@ class ContactController extends Controller
     public function admin()
     {
         //画面遷移するだけだとcontactテーブルの情報を読まずにエラーになるのでDBから持ってくる
-        $contacts = Contact::orderBy('id', 'desc')->get();
+        // $contacts = Contact::orderBy('id', 'desc')->get();
+        $contacts = Contact::orderBy('id', 'desc')->paginate(10);
         return view('admin', compact('contacts'));
     }
     //問い合わせフォームに画面遷移
@@ -79,8 +81,6 @@ class ContactController extends Controller
     public function replyConfirm(Request $request)
     {
         $replydata = $request->all();
-
-
         return view('replyConfirm', ['replydata' => $replydata]);
     }
 

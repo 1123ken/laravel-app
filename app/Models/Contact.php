@@ -16,7 +16,8 @@ class Contact extends Model{
     //contactテーブルから情報を引っ張る
     public function findAllContacts(){
         //contactsテーブルを降順で取得
-        return Contact::orderBy('id', 'desc')->get();
+        // return Contact::orderBy('id', 'desc')->get();
+        return Contact::orderBy('id', 'desc')->paginate(10);
     } 
 
     //idからの削除処理

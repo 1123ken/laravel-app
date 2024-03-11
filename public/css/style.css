@@ -182,3 +182,12 @@ div form input {
 #inputBtn:hover{
     background-color: gray;
 }
+
+#pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 30px;
+    padding-right: 150px;
+}
+
