@@ -22,7 +22,6 @@
                 </tr>
             </table>
             <div>
-
                 <table>
                     <thead>
                         <tr>
@@ -33,13 +32,38 @@
                     </thead>
                     <tr>
                         <td>
+                            {{-- body内の改行\nを<br>に変換するためにnl2brを使用する --}}
                             {!! nl2br(e($data->body)) !!}
                             <input type="hidden" name="body" value="{{ $data->body }}">
                         </td>
+                    </tr>
+                </table>
             </div>
-            </tr>
-            </table>
         </div>
+
+        {{-- 返信内容の表示（時間がなくて断念） --}}
+        {{-- repliesテーブルのreplyを引っ張ってきてどんな内容で返信したか表示 --}}
+        {{-- 可能ならadminページで返信の有無を表示する機能とかもあっていいのかなと思った --}}
+        {{-- <h2>前回の返事</h2>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            問い合わせ内容
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td> --}}
+                        {{-- body内の改行\nを<br>に変換するためにnl2brを使用する --}}
+                        {{-- {!! nl2br(e($replyData->reply)) !!}
+                    </td>
+                </tr>
+            </table>
+        </div> --}}
+
+
         <div id="reply">
             <table>
                 <tr>

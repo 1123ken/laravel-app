@@ -10,6 +10,7 @@ class getDBContoroller extends Controller{
 
     //コンストラクタ
     public function __construct(){
+        //ログイン認証
         $this->contact = new Contact();
         $this->middleware('auth');
     }

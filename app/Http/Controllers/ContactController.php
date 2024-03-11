@@ -27,7 +27,7 @@ class ContactController extends Controller
     public function admin()
     {
         //画面遷移するだけだとcontactテーブルの情報を読まずにエラーになるのでDBから持ってくる
-        $contacts = Contact::all();
+        $contacts = Contact::orderBy('id', 'desc')->get();
         return view('admin', compact('contacts'));
     }
     //問い合わせフォームに画面遷移
@@ -74,11 +74,6 @@ class ContactController extends Controller
 
         return view('contactComplete');
     }
-
-
-
-
-
 
     //返信内容確認
     public function replyConfirm(Request $request)
