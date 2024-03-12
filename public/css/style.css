@@ -1,3 +1,8 @@
+/* classは一つのページに複数回使用可 */
+/* IDは一つのページに１度のみ使用可 */
+
+/* 今回はそこを理解せずに作ったので次回から必ず気を付けること！！ */
+
 input {
     background-color: white;
     color: black;
