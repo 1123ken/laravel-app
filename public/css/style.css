@@ -179,6 +179,12 @@ div form input {
     max-height: 600px;
 }
 
+button #inputBtn{
+    background-color: white;
+    border: solid 1px black;
+    font-weight: bold;
+}
+
 #inputBtn:hover{
     background-color: gray;
 }

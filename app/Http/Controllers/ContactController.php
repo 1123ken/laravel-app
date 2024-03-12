@@ -15,6 +15,7 @@ class ContactController extends Controller
     //コンストラクタ
     public function __construct()
     {
+        //middlewareで認証しない場合一部の画面に遷移しないようにする
         $this->middleware('auth');
     }
 
@@ -28,18 +29,13 @@ class ContactController extends Controller
     public function admin()
     {
         //画面遷移するだけだとcontactテーブルの情報を読まずにエラーになるのでDBから持ってくる
-        // $contacts = Contact::orderBy('id', 'desc')->get();
         $contacts = Contact::orderBy('id', 'desc')->paginate(10);
+
         return view('admin', compact('contacts'));
     }
+
     //問い合わせフォームに画面遷移
     public function contactIndex()
-    {
-        return view('contactIndex');
-    }
-
-    //問い合わせ詳細フォームに画面遷移
-    public function contactBody()
     {
         return view('contactIndex');
     }
@@ -47,9 +43,9 @@ class ContactController extends Controller
     //入力内容確認ページに画面遷移
     public function contactConfirm(Request $request)
     {
-        //セッション情報をcontactsに保存(name基準で読み込む)
+        //セッション情報をcontactsに格納(name基準で読み込む)
         $contacts = $request->all();
-        //confirmにセッション情報を渡す
+
         return view('contactConfirm', ['contacts' => $contacts]);
     }
 
@@ -63,7 +59,7 @@ class ContactController extends Controller
             "body"  => $request->body,
         ]);
 
-        //メール送信に使う内容を変数$maildataに格納
+        //メール送信に使う連想配列を$maildataに格納
         $maildata = [
             'title' => 'お問い合わせありがとうございます',
             "email" => $request->email,
@@ -71,7 +67,6 @@ class ContactController extends Controller
         ];
 
         //登録内容をメールで送る
-        // Mail::to($request->email)->send(new SendMailContact($maildata));
         Mail::to($request->email)->send(new SendMailContact($maildata));
 
         return view('contactComplete');
@@ -102,8 +97,6 @@ class ContactController extends Controller
             'reply' => $request->reply,
         ];
         $to = $request->email;
-
-        // dd($maildata, $to);
 
         //返信内容をメールで送信する
         Mail::to($to)->send(new ReplyMail($maildata));

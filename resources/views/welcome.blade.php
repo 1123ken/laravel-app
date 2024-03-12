@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>welcomeページ</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
 <body class="antialiased">
@@ -184,7 +185,7 @@
             <br>
             <div>
                 <form action="/send-mail" method="get">
-                    <button type="submit" style="border: solid 1px black;">テストメール送信ボタン</button>
+                    <button type="submit" id="inputBtn" style="border:solid 1px black" style="background-color: white">テストメール送信ボタン</button>
                 </form>
             </div>
             <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
