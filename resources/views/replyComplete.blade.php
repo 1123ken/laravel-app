@@ -14,7 +14,7 @@
         <h1>返信完了しました</h1>
         <form method="post" action="{{ route('admin') }}">
             @csrf
-            <input type="submit" value="戻る">
+            <input type="submit" value="戻る" id="inputBtn">
         </form>
     </div>
 
